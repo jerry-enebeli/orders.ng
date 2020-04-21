@@ -1559,12 +1559,14 @@ ul.content-list li:last-child {
 }
 
 .hero-11-text {
-  background-image: url(../images/hero-11.jpg);
+  /* background-image: url(../images/hero-11.jpg); */
+  background: #080313;
+  padding: 15px;
   background-position: center bottom;
 }
 
 #hero-11-content {
-  padding-top: 220px;
+  padding-top: 180px;
   padding-bottom: 450px;
 }
 
