@@ -1,0 +1,273 @@
+:root {
+
+    --primary-1: #485BD4;
+    --primary-2: #1E88E5;
+    --primary-3: #FDD835;
+
+    --border: #eee;
+    --border-hover: #99A3BA;
+    --text-color: #6C7486;
+    --text-color-headline: #3F4656;
+
+    --shadow: rgba(22, 30, 50, .04);
+
+}
+
+
+.checkbox,
+.radio,
+.switch {
+    --color: var(--primary-1);
+    --border-hover: var(--primary-1);
+    --border-width: 1px;
+    margin: 0 0 12px 0;
+    display: table;
+    cursor: pointer;
+    &.inline {
+        margin: 0 12px 0 0;
+        display: inline-block;
+    }
+    input {
+        display: none;
+        & + span {
+            color: var(--text-color);
+            height: 2px;
+            font-weight: 500;
+            position: relative;
+            display: block;
+            &:before,
+            &:after {
+                content: '';
+                display: block;
+                left: 0;
+                top: 0;
+                position: absolute;
+            }
+            &:before {
+                height: 22px;
+                border: var(--border-width) solid var(--border);
+                background: #fff;
+                transition: background .3s ease, border-color .3s ease;
+            }
+            &:after {
+                transition: transform .3s ease, opacity .2s ease,  background .2s ease;
+            }
+        }
+        &:checked + span {
+            &:before {
+                background: var(--color);
+                border-color: var(--color);
+            }
+            &:after {
+                transition: opacity .3s ease, background .3s ease, transform .6s cubic-bezier(.175, .88, .32, 1.2);
+            }
+        }
+    }
+    &:hover {
+        input {
+            &:not(:checked) + span {
+                &:before {
+                    border-color: var(--border-hover);
+                }
+            }
+        }
+    }
+}
+
+.checkbox,
+.radio {
+    input {
+        & + span {
+            padding-left: 22px;
+            &:not(:empty) {
+                padding-left: 36px;
+            }
+            &:before {
+                width: 22px;
+            }
+            &:after {
+                opacity: 0;
+            }
+        }
+        &:checked + span {
+            &:after {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.checkbox {
+    input {
+        & + span {
+            &:before {
+                border-radius: 2px;
+            }
+            &:after {
+                width: 5px;
+                height: 9px;
+                border: 2px solid #fff;
+                border-top: 0;
+                border-left: 0;
+                left: 8px;
+                top: 3.5px;
+                transform: rotate(20deg);
+            }
+        }
+        &:checked + span {
+            &:after {
+                transform: rotate(43deg)translate(1px, 0);
+            }
+        }
+    }
+}
+
+// .radio {
+//     input {
+//         & + span {
+//             &:before,
+//             &:after {
+//                 border-radius: 50%;
+//             }
+//             &:after {
+//                 width: 22px;
+//                 height: 22px;
+//                 background: #fff;
+//                 opacity: 0;
+//                 transform: scale(.6);
+//             }
+//         }
+//         &:checked + span {
+//             &:after {
+//                 background: #fff;
+//                 transform: scale(.4);
+//             }
+//         }
+//     }
+// }
+
+// .switch {
+//     input {
+//         & + span {
+//             padding-left: 38px;
+//             &:not(:empty) {
+//                 padding-left: 46px;
+//             }
+//             &:before {
+//                 width: 38px;
+//                 border-radius: 11px;
+//             }
+//             &:after {
+//                 left: 4px;
+//                 top: 4px;
+//                 border-radius: 50%;
+//                 width: 14px;
+//                 height: 14px;
+//                 background: var(--border);
+//             }
+//         }
+//         &:checked + span {
+//             &:after {
+//                 background: #fff;
+//                 transform: translateX(16px) scale(.9);
+//             }
+//         }
+//     }
+//     &:hover {
+//         input {
+//             &:not(:checked) + span {
+//                 &:after {
+//                     background: var(--border-hover);
+//                 }
+//             }
+//         }
+//     }
+// }
+
+// Buttons
+
+// .btn {
+//     --color: var(--primary-1);
+//     --text: #fff;
+//     display: inline-block;
+//     text-align: center;
+//     vertical-align: middle;
+//     touch-action: manipulation;
+//     position: relative;
+//     white-space: nowrap;
+//     border: none;
+//     color: var(--text);
+//     padding: 9px 24px;
+//     font-size: 14px;
+//     line-height: 22px;
+//     font-weight: 600;
+//     background: var(--color);
+//     border-radius: 6px;
+//     text-decoration: none;
+//     transition: all .3s ease;
+//     &:link,
+//     &:active,
+//     &:visited,
+//     &:focus {
+//         color: var(--text);
+//     }
+//     svg {
+//         position: relative;
+//         left: -4px;
+//         width: 18px;
+//         height: 18px;
+//         display: inline-block;
+//         vertical-align: top;
+//         font-weight: normal;
+//         margin: 2px 0;
+//         fill: var(--text);
+//         &.right {
+//             left: auto;
+//             right: -4px;
+//         }
+//     }
+//     &.icon {
+//         padding: 9px;
+//         svg {
+//             left: auto;
+//             right: auto;
+//             display: block;
+//             margin: 2px;
+//         }
+//     }
+//     &.sm {
+//         font-size: 14px;
+//         border-radius: 6px;
+//         padding: 6px 16px;
+//         &.icon {
+//             padding: 6px;
+//             svg {
+//                 margin: 3px;
+//             }
+//         }
+//         svg {
+//             width: 16px;
+//             height: 16px;
+//             margin: 3px 0;
+//         }
+//     }
+//     &.border {
+//         --text: var(--color);
+//         background: none;
+//         &:before {
+//             content: '';
+//             left: 0;
+//             right: 0;
+//             top: 0;
+//             bottom: 0;
+//             position: absolute;
+//             z-index: 0;
+//             border-radius: inherit;
+//             transition: border-color .3s ease;
+//             border: 1px solid var(--color);
+//         }
+//     }
+// }
+
+
+
