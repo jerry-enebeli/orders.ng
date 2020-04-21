@@ -4,21 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <meta
-      property="og:image"
-      content="https://res.cloudinary.com/temiid/image/upload/v1558347826/platphom%20expense/fab-icon_2x.png"
-    />
-    <meta property="og:title" content="Platphom Expense " />
-    <meta
-      property="og:description"
-      content="Platphom - Getting you ahead of your expenses"
-    />
-    <link
-      rel="shortcut icon"
-      type="image/png"
-      href="https://res.cloudinary.com/temiid/image/upload/v1558347826/platphom%20expense/fab-icon_2x.png"
-    />
-    <title>Mixta - Buy/Sell</title>
+
+    <title>Orders.ng</title>
 
     <!--STYLES-->
     <link
@@ -56,7 +43,7 @@
               href="index.html"
               class="link black f2-5-ns f2-8 Google-sans-bold"
               style="color: #62bf54;"
-              ><span>Thrift Store</span></a
+              ><span id="business-name">Thrift Store</span></a
             >
 
             <!--MOBILE VIEW TOGGLE ICON-->
@@ -112,9 +99,9 @@
          
                 <div>
                     <div class="f4-5-l f4-8 black-50 ">
-                        <P >Product Name: Tshirt</P>
+                        <P>Product Name: <span id="product-name"></span></P>
 
-                        <P >Price: ₦1,000,000</P>
+                        <P >Price: <span id="product-price"></span></P>
                     </div>
               
                     <input
@@ -188,7 +175,15 @@
     </div>
 
     <!-- ******* JS FILES ********* -->
+<!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-app.js"></script>
 
+<!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+<script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-analytics.js"></script>
+
+<!-- Add Firebase products that you want to use -->
+<script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-firestore.js"></script>
     <!-- JQUERY CDN -->
     <script src="js/vendor/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
