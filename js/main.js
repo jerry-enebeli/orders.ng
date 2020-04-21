@@ -35,7 +35,7 @@ const placeOrder = async (e) => {
   const customer_phone = document.getElementById("customer_phone").value;
   const delivery_address = document.getElementById("delivery_address").value;
   const qty = document.getElementById("qty").value;
-  console.log(price, qty)
+  
   const data = {
     customer_email,
     customer_name,
