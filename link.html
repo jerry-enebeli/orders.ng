@@ -99,14 +99,15 @@
          
                 <div>
                     <div class="f4-5-l f4-8 black-50 ">
-                        <P>Product Name: <span id="product-name"></span></P>
+                        <p >Product Name: <span id="product-name"></span></p>
 
-                        <P >Price: <span id="product-price"></span></P>
+                        <p >Price: <span id="product-price"></span></p>
                     </div>
               
                     <input
+                    value=1
                     class="input-reset bw0-5 f4-5 cursor ba b--light-gray br1 black-80 ph3 mv3 db w-100 outline-0 entry-h"
-                  
+                    id="qty"
                     placeholder="Quantity"
                     type="number"
                   />
@@ -138,24 +139,27 @@
                   </div>
                 </div>
                 <input
-                  id=""
+                  id="customer_name"
                   class="input-reset bw0-5 f4-5 cursor ba b--light-gray br1 black-80 ph3 mt3 db w-100 outline-0 entry-h"
                   placeholder="Full Name"
-                  type="number"
+                  type="text"
                 />
          
                   <input
+                  id="customer_phone"
                     class="input-reset mt3 bw0-5 f4-5 cursor mr2 ba b--light-gray br1 black-80 ph3 db w-100 outline-0 entry-h"
                     placeholder="Phone Number"
                     type="number"
                   />
            
                   <input
+                  id="customer_email"
                   class="input-reset mt3 bw0-5 f4-5 cursor mr2 ba b--light-gray br1 black-80 ph3 db w-100 outline-0 entry-h"
                   placeholder="Email Address"
                   type="email"
                 />
                 <input
+                id="delivery_address"
                   class="input-reset bw0-5 f4-5 cursor ba b--light-gray br1 black-80 ph3 mv3 db w-100 outline-0 entry-h"
                   style="height: 100px;"
                   placeholder="Delivery Address"
@@ -164,7 +168,7 @@
               </div>
             </fieldset>
 
-            <button style="background: #62bf54; width: 100%; border: 0; height: 70px; color: white; font-size: 16px;">
+            <button onclick="placeOrder()" type="button" style="background: #62bf54; width: 100%; border: 0; height: 70px; color: white; font-size: 16px; outline: none;">
                 Place Order
             </button>
           </form>
