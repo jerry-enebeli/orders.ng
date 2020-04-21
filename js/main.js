@@ -3,6 +3,7 @@ const myParam = urlParams.get("myParam");
 const businessName = urlParams.get("business");
 const userId = urlParams.get("id");
 const linkId = urlParams.get("link");
+const xop = urlParams.get("xop");
 
 let productName;
 let priceNum
@@ -42,6 +43,7 @@ const placeOrder = async (e) => {
     customer_phone,
     delivery_address,
     userId,
+    xop,
     qty: qty || 1,
     total_amount: parseInt(priceNum) * parseInt(qty),
     status: "pending",
