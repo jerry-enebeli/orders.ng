@@ -1,139 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta property="og:image" content="https://res.cloudinary.com/temiid/image/upload/v1558347826/platphom%20expense/fab-icon_2x.png" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta
+      property="og:image"
+      content="https://res.cloudinary.com/temiid/image/upload/v1558347826/platphom%20expense/fab-icon_2x.png"
+    />
     <meta property="og:title" content="Platphom Expense " />
-    <meta property="og:description" content="Platphom - Getting you ahead of your expenses" />
-    <link rel="shortcut icon" type="image/png" href="https://res.cloudinary.com/temiid/image/upload/v1558347826/platphom%20expense/fab-icon_2x.png"/>
-    <title>Mixta - Buy/Sell </title>
-    
-
+    <meta
+      property="og:description"
+      content="Platphom - Getting you ahead of your expenses"
+    />
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="https://res.cloudinary.com/temiid/image/upload/v1558347826/platphom%20expense/fab-icon_2x.png"
+    />
+    <title>Mixta - Buy/Sell</title>
 
     <!--STYLES-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
-    <link rel="stylesheet" href="css/tachyons.css">
-    <link rel="stylesheet" href="css/styles.css">
-    
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
+    />
+    <link rel="stylesheet" href="css/tachyons.css" />
+    <link rel="stylesheet" href="css/styles.css" />
 
     <!-- ICON LINKED  -->
-     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"
+    />
+  </head>
 
-</head>
+  <body class="bg-black Google-sans-regular black">
+    <div
+      id="#now-app"
+      class="w-100 body-col flex flex-column justify-start items-center"
+    >
+      <!-- *** HEADER STARTS *** -->
+      <section class="nav-header-sec w-100 flex">
+        <!-- ***NAV HEADER LEFT STARTS***-->
+        <nav
+          data-scroll
+          class="z-9999 scroll-effect w-100 fixed flex justify-center items-center bg-white shadow-in bb b--black-05"
+        >
+          <div
+            style="padding: 20px; display: flex; justify-content: center;"
+            class="m-w w-100 flex justify-between items-center ph3 ph4-m ph6-l ph4-pro pv1-5 pv2-ns black-80"
+          >
+            <!-- LOGO -->
+            <a
+              href="index.html"
+              class="link black f2-5-ns f2-8 Google-sans-bold"
+              style="color: #62bf54;"
+              ><span>Thrift Store</span></a
+            >
 
-<body class=" bg-black Google-sans-regular black">
+            <!--MOBILE VIEW TOGGLE ICON-->
+            <!-- <div id="mob-toggle" class="dn-ns df w2 pointer black"><i data-scroll class='titanic titanic-menu-minus'></i></div> -->
+          </div>
+        </nav>
+        <!-- ***NAV HEADER LEFT ENDS***-->
 
-<div id="#now-app" class="w-100 body-col flex flex-column justify-start items-center">
-
-
-    <!-- *** HEADER STARTS *** -->
-     <section class="nav-header-sec w-100 flex ">
-
-            <!-- ***NAV HEADER LEFT STARTS***-->
-            <nav data-scroll class="z-9999 scroll-effect w-100 fixed flex justify-center items-center bg-white shadow-in bb b--black-05">
-
-                <div style="padding: 20px;" class="m-w w-100 flex justify-between items-center ph3 ph4-m ph6-l ph4-pro pv1-5 pv2-ns black-80">
-    
-                <!-- LOGO -->
-                <a href="index.html" class="link black f2-5-ns f2-8 Google-sans-bold" style="color: #62BF54;"><span>Thrift Store</span></a>
-
-                
-     
-    
-                <!--MOBILE VIEW TOGGLE ICON-->
-                <!-- <div id="mob-toggle" class="dn-ns df w2 pointer black"><i data-scroll class='titanic titanic-menu-minus'></i></div> -->
-
-                </div>
-    
-            </nav>
-            <!-- ***NAV HEADER LEFT ENDS***-->
-    
-            <!--*** MOBILE NAV MENU STARTS ***-->
-            <div id="mob-menu" class="z-1000 bg-pri-dim dn-ns df flex-column fixed w-100 hide-mob-menu justify-end items-center">
-                
-                <!-- MOBILE NAV ITEM LINKS-->
-                <div class="flex flex-column justify-center items-center hide-me">
-                </div>
-                
-            </div>
-            <!--*** MOBILE NAV MENU ENDS ***-->
-    
-    </section>
-    <!-- *** HEADER ENDS *** -->
-
-
-    <!-- *** MAIN WRAPPER *** -->
-    <section class=" w-100 flex flex-column items-center" style="min-height: 100vh">
-
-        <div class=" flex justify-center items-center xl-screen w-45-ns w-100 slide-up">
-            <form data-scroll class="mt5-5 mt6-m mt6-l w-100 pl3-l">
-                <!--ABOUT YOURSELF-->
-                <fieldset class=" bg-white br1 mh3 mh0-ns  mb4 mb4-5-ns pa3 pa4-ns ba b--black-05">
-                    <div class="inpt  w-100">
-                        <div class="flex justify-between">
-                            <div class="flex flex-column justify-between justify-start-ns pr4 pr0-ns">
-                                <p class="Google-sans-medium pb1 ma0 f4 ttc lh-title black-70">Delivery Information</p>
-                                <p class="Google-sans-regular ma0 pb3-ns pb3 lh-copy2 f4-5-l f4-8 black-50 ttc"> This information would be used to fulfill your order</p>
-                            </div>
-                 
-                        </div>
-                        <input id=""  class=" input-reset bw0-5 f4-5 cursor ba b--light-gray br1 black-80 ph3 mt3 db w-100 outline-0 entry-h" placeholder="Full Name" type="number">
-                        <div class="w-100 flex justify-between">
-                            <input class=" input-reset mt3 bw0-5 f4-5 cursor mr2 ba b--light-gray br1 black-80 ph3 db w-60 outline-0 entry-h" placeholder="Phone Number" type="number">
-                            <input  class=" input-reset mt3 bw0-5 f4-5 cursor ml2 ba b--light-gray br1 black-80 ph3 db w-40 outline-0 entry-h" placeholder="Email Address" type="email">
-                        </div>
-                        <input class="input-reset bw0-5 f4-5 cursor ba b--light-gray br1 black-80 ph3 mv3 db w-100 outline-0 entry-h" style="height: 100px;" placeholder="Delivery Address" type="text">
-                </div>
-                </fieldset>
-
-                <!-- CARD DETAILS-->
-               <fieldset class=" bg-white br1 mh3 mh0-ns  mb4 mb4-5-ns pa3 pa4-ns ba b--black-05">
-                    <div class="inpt  w-100">
-                        <div class="flex justify-between">
-                            <div class="flex flex-column justify-between justify-start-ns pr4 pr0-ns">
-                                <p class="Google-sans-medium pb1 ma0 f4 ttc lh-title black-70">Product Details </p>
-                                <p class="Google-sans-regular ma0 pb3-ns pb3 lh-copy2 f4-5-l f4-8 black-50 ttc"></p>
-                            </div>
-                
-                        </div>
-                        <input value="Tshirt" class=" input-reset bw0-5 f4-5 cursor ba b--light-gray br1 black-80 ph3 mt3 db w-100 outline-0 entry-h">
-                        <div class="w-100 flex justify-between">
-                            <input value=1000  class=" input-reset mt3 bw0-5 f4-5 cursor mr2 ba b--light-gray br1 black-80 ph3 db w-60 outline-0 entry-h"  type="number">
-                            <input class=" input-reset mt3 bw0-5 f4-5 cursor ml2 ba b--light-gray br1 black-80 ph3 db w-40 outline-0 entry-h" placeholder="Quantity" type="number">
-                        </div>
-                
-                </div>
-                </fieldset>
-
-            </form>
+        <!--*** MOBILE NAV MENU STARTS ***-->
+        <div
+          id="mob-menu"
+          class="z-1000 bg-pri-dim dn-ns df flex-column fixed w-100 hide-mob-menu justify-end items-center"
+        >
+          <!-- MOBILE NAV ITEM LINKS-->
+          <div
+            class="flex flex-column justify-center items-center hide-me"
+          ></div>
         </div>
+        <!--*** MOBILE NAV MENU ENDS ***-->
+      </section>
+      <!-- *** HEADER ENDS *** -->
 
-    </section>
-    <!-- *** MAIN WRAPPER *** -->
+      <!-- *** MAIN WRAPPER *** -->
+      <section
+        class="w-100 flex flex-column items-center"
+        style="min-height: 100vh;"
+      >
+        <div
+          class="flex justify-center items-center xl-screen w-45-ns w-100 slide-up"
+        >
+          <form data-scroll class="mt5-5 mt6-m mt6-l w-100 pl3-l">
+            <!--ABOUT YOURSELF-->
+            <fieldset
+              class="bg-white br1 mh3 mh0-ns mb4 mb4-5-ns pa3 pa4-ns ba b--black-05"
+            >
+              <div class="inpt w-100">
+                <div class="flex justify-between">
+                  <div
+                    class="flex flex-column justify-between justify-start-ns pr4 pr0-ns"
+                  >
+                    <p
+                      class="Google-sans-medium pb1 ma0 f4 ttc lh-title black-70"
+                    >
+                      Delivery Information
+                    </p>
+                    <p
+                      class="Google-sans-regular ma0 pb3-ns pb3 lh-copy2 f4-5-l f4-8 black-50 ttc"
+                    >
+                      This information would be used to fulfill your order
+                    </p>
+                  </div>
+                </div>
+                <input
+                  id=""
+                  class="input-reset bw0-5 f4-5 cursor ba b--light-gray br1 black-80 ph3 mt3 db w-100 outline-0 entry-h"
+                  placeholder="Full Name"
+                  type="number"
+                />
+                <div class="w-100 flex justify-between">
+                  <input
+                    class="input-reset mt3 bw0-5 f4-5 cursor mr2 ba b--light-gray br1 black-80 ph3 db w-60 outline-0 entry-h"
+                    placeholder="Phone Number"
+                    type="number"
+                  />
+                  <input
+                    class="input-reset mt3 bw0-5 f4-5 cursor ml2 ba b--light-gray br1 black-80 ph3 db w-40 outline-0 entry-h"
+                    placeholder="Email Address"
+                    type="email"
+                  />
+                </div>
+                <input
+                  class="input-reset bw0-5 f4-5 cursor ba b--light-gray br1 black-80 ph3 mv3 db w-100 outline-0 entry-h"
+                  style="height: 100px;"
+                  placeholder="Delivery Address"
+                  type="text"
+                />
+              </div>
+            </fieldset>
 
-</div>
+            <!-- CARD DETAILS-->
+            <fieldset
+              class="bg-white br1 mh3 mh0-ns mb4 mb4-5-ns pa3 pa4-ns ba b--black-05"
+            >
+              <div class="inpt w-100">
+                <div class="flex justify-between">
+                  <div
+                    class="flex flex-column justify-between justify-start-ns pr4 pr0-ns"
+                  >
+                    <p
+                      class="Google-sans-medium pb1 ma0 f4 ttc lh-title black-70"
+                    >
+                      Product Details
+                    </p>
+                    <p
+                      class="Google-sans-regular ma0 pb3-ns pb3 lh-copy2 f4-5-l f4-8 black-50 ttc"
+                    ></p>
+                  </div>
+                </div>
+                <input
+                  value="Tshirt"
+                  class="input-reset bw0-5 f4-5 cursor ba b--light-gray br1 black-80 ph3 mt3 db w-100 outline-0 entry-h"
+                />
+                <div class="w-100 flex justify-between">
+                  <input
+                    value="1000"
+                    class="input-reset mt3 bw0-5 f4-5 cursor mr2 ba b--light-gray br1 black-80 ph3 db w-60 outline-0 entry-h"
+                    type="number"
+                  />
+                  <input
+                    class="input-reset mt3 bw0-5 f4-5 cursor ml2 ba b--light-gray br1 black-80 ph3 db w-40 outline-0 entry-h"
+                    placeholder="Quantity"
+                    type="number"
+                  />
+                </div>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+      </section>
+      <!-- *** MAIN WRAPPER *** -->
+    </div>
 
+    <!-- ******* JS FILES ********* -->
 
-
-
-          
-
-
-
-
-<!-- ******* JS FILES ********* -->
-
-     <!-- JQUERY CDN -->
-     <script src="js/vendor/jquery.min.js"></script>
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
-     <script> 
-      $(document).ready(function(){
-           $('.ui.dropdown') .dropdown();
-     });
-     </script>
+    <!-- JQUERY CDN -->
+    <script src="js/vendor/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $(".ui.dropdown").dropdown();
+      });
+    </script>
 
     <!--ION-ICON-->
     <script src="https://unpkg.com/ionicons@4.4.8/dist/ionicons.js"></script>
@@ -141,6 +197,5 @@
     <!--MAINN SCRIPT -->
     <script src="js/main.js"></script>
     <script src="js/smooth-scroll.js"></script>
-
-</body>
+  </body>
 </html>
