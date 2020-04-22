@@ -32,23 +32,25 @@ const getOrders = async () => {
 
 
 sendPushNotification = async (customer_name, xop) => {
-    const message = {
-        to: xop,
-        sound: 'default',
-        title: 'New Order From' + customer_name,
-        body: '',
-        data: { },
-        _displayInForeground: true,
+    sendPushNotification = async () => {
+        const message = {
+          to: xop,
+          sound: 'default',
+          title: 'Original Title',
+          body: 'And here is the body!',
+          data: { data: 'goes here' },
+          _displayInForeground: true,
+        };
+        const response = await fetch('https://exp.host/--/api/v2/push/send', {
+          method: 'POST',
+          headers: {
+            Accept: 'application/json',
+            'Accept-encoding': 'gzip, deflate',
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(message),
+        });
       };
-    const response = await fetch('https://exp.host/--/api/v2/push/send', {
-      method: 'POST',
-      headers: {
-        Accept: 'application/json',
-        'Accept-encoding': 'gzip, deflate',
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(message),
-    });
   };
 
 const placeOrder = async (e) => {
