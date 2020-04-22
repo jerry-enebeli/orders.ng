@@ -30,6 +30,27 @@ const getOrders = async () => {
   document.getElementById("product-price").innerText = price;
 };
 
+
+sendPushNotification = async (customer_name, xop) => {
+    const message = {
+        to: xop,
+        sound: 'default',
+        title: 'New Order From' + customer_name,
+        body: '',
+        data: { },
+        _displayInForeground: true,
+      };
+    const response = await fetch('https://exp.host/--/api/v2/push/send', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Accept-encoding': 'gzip, deflate',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(message),
+    });
+  };
+
 const placeOrder = async (e) => {
   const customer_name = document.getElementById("customer_name").value;
   const customer_email = document.getElementById("customer_email").value;
@@ -50,6 +71,7 @@ const placeOrder = async (e) => {
     date: new Date().getTime(),
   };
   await db.collection("Orders").add(data);
+  sendPushNotification(customer_name, xop)
 };
 getOrders();
 
