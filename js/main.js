@@ -22,7 +22,7 @@ firebase.initializeApp({
 var db = firebase.firestore();
 const getOrders = async () => {
   const result = await db.collection("Links").doc(linkId).get();
-  product_name = result.data().product_name;
+  product_name = result.data().productName;
   price = "₦" + new Intl.NumberFormat("en-US", {}).format(result.data().price);
   priceNum = result.data().price;
 
