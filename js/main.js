@@ -67,6 +67,7 @@ const placeOrder = async (e) => {
 
   const productsWithQuantity = products.map((product, i) => {
     product.qty = parseInt(document.getElementById(i + "qty").value) || 1;
+    product.price = product.qty * product.price
     return product;
   });
 
