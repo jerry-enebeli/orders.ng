@@ -78,13 +78,13 @@ const placeOrder = async (e) => {
     delivery_address,
     product_name,
     product_price: priceNum,
-    products,
+    products: productsWithQuantity,
     userId,
     xop,
-    qty: products.reduce((total, product) => {
+    qty: productsWithQuantity.reduce((total, product) => {
       return total + product.qty;
     }, 0),
-    total_amount: products.reduce((total, product) => {
+    total_amount: productsWithQuantity.reduce((total, product) => {
       return total + product.qty * product.price;
     }, 0),
     status: "pending",
