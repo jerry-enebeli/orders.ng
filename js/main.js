@@ -8,6 +8,7 @@ const xop = urlParams.get("xop");
 let product_name;
 let priceNum;
 let price;
+let products;
 
 firebase.initializeApp({
   apiKey: "AIzaSyD-mNaskMlrezICXddeo6KED1gemyLLzc8",
@@ -20,36 +21,42 @@ firebase.initializeApp({
   measurementId: "G-EDCQCN0F56",
 });
 var db = firebase.firestore();
-const getOrders = async () => {
-  const result = await db.collection("Links").doc(linkId).get();
-  product_name = result.data().productName;
-  price = "₦" + new Intl.NumberFormat("en-US", {}).format(result.data().price);
-  priceNum = result.data().price;
 
-  document.getElementById("product-name").innerText = product_name;
-  document.getElementById("product-price").innerText = price;
+const numberFormat = (price) => {
+  return "₦" + new Intl.NumberFormat("en-US", {}).format(price);
 };
 
-sendPushNotification = async (customer_name, xop) => {
-  sendPushNotification = async () => {
-    const message = {
-      to: xop,
-      sound: "default",
-      title: "Original Title",
-      body: "And here is the body!",
-      data: { data: "goes here" },
-      _displayInForeground: true,
-    };
-    const response = await fetch("https://exp.host/--/api/v2/push/send", {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Accept-encoding": "gzip, deflate",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(message),
-    });
-  };
+let x = (renderProductDetails = ({ productName, price }, id) => {
+  return `   
+  <div class="f4-5-l f4-8 black-50 ">
+      <p >Product Name: <span id="product-name">${productName}</span></p>
+  
+      <p >Price: <span id="product-price">${price}</span></p>
+  </div>
+  
+  <p style="margin-top: 22px" class="f4-5-l f4-8 black-50 ">Quantity</p>
+  <input
+  value=1
+  class="input-reset bw0-5 f4-5 cursor ba b--light-gray br1 black-80 ph3 mv3 db w-100 outline-0 entry-h"
+  id=${id + "qty"}
+  placeholder="Quantity"
+  type="number"
+  />
+  `;
+});
+
+const getLinkDetails = async () => {
+  const result = await db.collection("Links").doc(linkId).get();
+  product_name = result.data().productName;
+  price = numberFormat(result.data().price);
+  priceNum = result.data().price;
+  products = result.data().products;
+  products.forEach((product, i) => {
+    let div = document.createElement("div");
+    div.innerHTML = renderProductDetails(product, i);
+    div.style.marginBottom = "30px";
+    document.getElementById("product-details").append(div);
+  });
 };
 
 const placeOrder = async (e) => {
@@ -57,7 +64,11 @@ const placeOrder = async (e) => {
   const customer_email = document.getElementById("customer_email").value;
   const customer_phone = document.getElementById("customer_phone").value;
   const delivery_address = document.getElementById("delivery_address").value;
-  const qty = document.getElementById("qty").value;
+
+  const productsWithQuantity = products.map((product, i) => {
+    product.qty = parseInt(document.getElementById(i + "qty").value) || 1;
+    return product;
+  });
 
   const data = {
     customer_email,
@@ -66,16 +77,22 @@ const placeOrder = async (e) => {
     delivery_address,
     product_name,
     product_price: priceNum,
+    products,
     userId,
     xop,
-    qty: qty || 1,
-    total_amount: parseInt(priceNum) * parseInt(qty),
+    qty: products.reduce((total, product) => {
+      return total + product.qty;
+    }, 0),
+    total_amount: products.reduce((total, product) => {
+      return total + product.qty * product.price;
+    }, 0),
     status: "pending",
     date: new Date().getTime(),
   };
+
   await db.collection("Orders").add(data);
-  document.location = "orders-placed.html"
+  document.location = "orders-placed.html";
 };
-getOrders();
+getLinkDetails();
 
 document.getElementById("business-name").innerText = businessName;
