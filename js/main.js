@@ -3,8 +3,9 @@ const myParam = urlParams.get("myParam");
 const businessName = urlParams.get("business");
 const userId = urlParams.get("id");
 const linkId = urlParams.get("link");
-const xop = urlParams.get("xop");
+const xop = urlParams.get("xop").split("[")[1].split("]")
 
+console.log(xop)
 let product_name;
 let priceNum;
 let price;
@@ -89,6 +90,8 @@ const placeOrder = async (e) => {
     status: "pending",
     date: new Date().getTime(),
   };
+
+  console.log(data)
 
   await db.collection("Orders").add(data);
   document.location = "orders-placed.html";
