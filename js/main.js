@@ -80,7 +80,7 @@ const placeOrder = async (e) => {
     businessName,
     products: productsWithQuantity,
     userId,
-    xop,
+    xop: `ExponentPushToken[${xop}]`,
     qty: productsWithQuantity.reduce((total, product) => {
       return total + product.qty;
     }, 0),
