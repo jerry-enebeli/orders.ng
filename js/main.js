@@ -85,7 +85,7 @@ const placeOrder = async (e) => {
       return total + product.qty;
     }, 0),
     total_amount: productsWithQuantity.reduce((total, product) => {
-      return total + product.qty * product.price;
+      return total + product.price;
     }, 0),
     status: "pending",
     date: new Date().getTime(),
