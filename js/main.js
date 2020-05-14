@@ -3,9 +3,15 @@ const myParam = urlParams.get("myParam");
 const businessName = urlParams.get("business");
 const userId = urlParams.get("id");
 const linkId = urlParams.get("link");
-const xop = urlParams.get("xop").split("[")[1].split("]")
+let xop;
 
-console.log(xop)
+if (urlParams.get("xop")) {
+  xop = urlParams.get("xop").split("[")[1].split("]");
+} else{
+  xop = ""
+}
+
+console.log(xop);
 let product_name;
 let priceNum;
 let price;
@@ -68,7 +74,7 @@ const placeOrder = async (e) => {
 
   const productsWithQuantity = products.map((product, i) => {
     product.qty = parseInt(document.getElementById(i + "qty").value) || 1;
-    product.price = product.qty * product.price
+    product.price = product.qty * product.price;
     return product;
   });
 
@@ -91,7 +97,7 @@ const placeOrder = async (e) => {
     date: new Date().getTime(),
   };
 
-  console.log(data)
+  console.log(data);
 
   await db.collection("Orders").add(data);
   document.location = "orders-placed.html";
