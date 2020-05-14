@@ -5,10 +5,11 @@ const userId = urlParams.get("id");
 const linkId = urlParams.get("link");
 let xop;
 
-if (urlParams.get("xop")) {
+const errorXop = [null, "null", "", " "];
+if (!errorXop.includes(urlParams.get("xop"))) {
   xop = urlParams.get("xop").split("[")[1].split("]");
-} else{
-  xop = ""
+} else {
+  xop = "";
 }
 
 console.log(xop);
