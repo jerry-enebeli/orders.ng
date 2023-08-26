@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <!--
+    OPTIONAL - TODO: Copy code to page header to customize styling
+-->
+    <style>
+      :root {
+        --pinc-oauth-ui-panel-bg-color: #f8f9fa;
+        --pinc-oauth-ui-panel-text-color: #000;
+        --pinc-oauth-ui-panel-light-text-color: #6c757d;
+        --pinc-oauth-ui-panel-hover-bg-color: rgba(232, 232, 232, 0.6);
+      }
+    </style>
+  </head>
+  <!--
+-->
+  <script
+    src="https://labs.pathfix.com/helper.js"
+    data-user-id="[Orchestrate_END_USER_ID]"
+    id="pinc.helper"
+    modules="pinc.oauth.min"
+    data-public-key="9B8CA080-4EB5-4682-ADE7-9613CB34CDD1"
+  ></script>
+
+  <!--
+-->
+  <div
+    data-oauth-ui="list-columns"
+    data-oauth-ui-switches="statusOn,disconnect"
+    data-oauth-icon-size="Medium"
+    data-oauth-button-color="#007BFF"
+    data-oauth-ui-providers=""
+    data-oauth-ui-providerTypes=""
+  >
+    Hello world
+  </div>
+</html>

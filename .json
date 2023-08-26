@@ -1,0 +1,22 @@
+{
+  "REDIS_ADDR": "redis-16489.c90.us-east-1-3.ec2.cloud.redislabs.com:16489",
+  "REDIS_PASSWORD": "V9ZBfGQ3IQsRqWkKyBvwmeOTSKMsrGWH",
+  "REDIS_USER": "default",
+  "MONGO_URL": "mongodb+srv://prod:eV4luE8PA5fFJEYR@production-cluster.cskmy.mongodb.net/orchestrate?retryWrites=true&w=majority",
+  "SENTRY_DNS": "https://685c21288e4d4870b6930d2755b80992@o1066803.ingest.sentry.io/6059856",
+  "ENVIRONMENT": "production",
+  "JWT_SECRET": "",
+  "BACKEND_URL": "https://api.orchestrate.finance",
+  "LINK_DOMAIN": "https://orchs.xyz",
+  "CHECKOUT_URL": "https://checkout.orchestrate.finance/checkout",
+  "FRONTEND_URL": "https://app.orchestrate.finance",
+  "PAYSTACK_SECRET_KEY": "sk_test_a2ea0ad566138b1e618d5377b40b474c58f31538",
+  "SVIX_AUTH_TOKEN": "sk_m7g57oRHipMrtVFm6O6dokiQVoagwZgk",
+  "ENCRYPT_KEY": "fufyy2372664fbgf8787280rfm-fqfb21t3v8te98e093uu0",
+  "AWS_ACCESS_ID": "AKIAX5MLM7LXC64AWJOY",
+  "AWS_SECRET_KEY": "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",
+  "MAILGUN_DOMAIN": "mail.getwallets.co",
+  "MAILGUN_KEY": "64b76cf832f1124d920f88e941775004-7dcc6512-204dc9e7",
+  "NEW_RELIC_LICENSE": "5ba8e4571d401c3a31976a4661a8730ddda0NRAL",
+  "PORT": "4100"
+}
